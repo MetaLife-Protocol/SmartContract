@@ -1,31 +1,28 @@
-// SPDX-License-Identifier: MIT OR Apache-2.0
-pragma solidity ^0.8.3;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/utils/Counters.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 //import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
-//import "@openzeppelin/contracts/access/Ownable.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Counters.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/security/ReentrancyGuard.sol";
+//import "@openzeppelin/contracts/utils/Counters.sol";
+//import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "./BidingContract.sol";
+//import "hardhat/console.sol";
 
-import "hardhat/console.sol";
-
-contract NFTMarket is ReentrancyGuard , Auctioning {
+contract NFTMarket is ReentrancyGuard,Auctioning {
   using Counters for Counters.Counter;
   Counters.Counter private _itemIds;
   Counters.Counter private _itemsSold;
 
   address payable owner;
-  uint256 listingPrice = 0.025 ether;
-  address nftContract ;
+  uint256 listingPrice = 1 ether;
 
-  constructor(address _NFTContract) {
-nftContract = _NFTContract;
+  constructor() {
     owner = payable(msg.sender);
   }
 
-  struct MarketItem {
-    uint itemId;
+  struct MarketItem { uint itemId;
     address nftContract;
     uint256 tokenId;
     address payable seller;
@@ -45,52 +42,42 @@ nftContract = _NFTContract;
     uint256 price,
     bool sold
   );
-    
-    modifier onlyOwner() {
-        require(owner == msg.sender, "Ownable: caller is not the owner");
-        _;
-    }
-    
-  
+
   /* Returns the listing price of the contract */
   function getListingPrice() public view returns (uint256) {
     return listingPrice;
   }
-  function ChangeNFTContract(address _nftContract) public {
-    nftContract = _nftContract;
-  }
-  /* Places an item for sale on the marketplace */
-  function createMarketItem(uint256 tokenId,uint256 price ) public payable nonReentrant {
-    require(price > 0, "Price must be at least 1 wei");
-    require(msg.value == listingPrice, "Price must be equal to listing price");
-    _itemIds.increment();
-    uint256 itemId = _itemIds.current();
-    idToMarketItem[itemId] =  MarketItem(itemId,nftContract,tokenId,payable(msg.sender),payable(address(0)),
-      price,false
-     );
-    IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId);
-    emit MarketItemCreated(itemId,nftContract,tokenId,msg.sender,address(0),price,false);
-  }
-  
-function cancelMarketItem(uint256 tokenId) public payable nonReentrant onlyOwner{
- //   require(price > 0, "Price must be at least 1 wei");
-    require(msg.value == listingPrice, "Price must be equal to listing price");
-    require(idToMarketItem[itemId].sold = false,"NFT has been Sold");
-    _itemIds.increment();
-    uint256 itemId = _itemIds.current();
-    idToMarketItem[itemId] =  MarketItem(itemId,nftContract,tokenId,payable(msg.sender),payable(address(0)),
-    0,false
-    );
-    IERC721(nftContract).transferFrom(address(this),msg.sender,tokenId);
-    emit MarketItemCreated(itemId,nftContract,tokenId,msg.sender,address(0),0,false);
-  }
 
+  /* Places an item for sale on the marketplace */
+  function createMarketItem(
+    address nftContract,
+    uint256 tokenId,
+    uint256 price
+  ) public payable nonReentrant {
+    require(price > 0, "Price must be at least 1 wei");
+    require(msg.value >= listingPrice, "Price must be equal to listing price");
+
+    _itemIds.increment();
+    uint256 itemId = _itemIds.current();
+
+    idToMarketItem[itemId] =  MarketItem(
+      itemId,
+      nftContract,
+      tokenId,
+      payable(msg.sender),
+      payable(address(0)),
+      price,
+      false
+    );
+
+    IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId);
+
+    emit MarketItemCreated(  itemId,nftContract,tokenId,msg.sender,address(0), price,false );
+  }
 
   /* Creates the sale of a marketplace item */
   /* Transfers ownership of the item, as well as funds between parties */
-  function createMarketSale(
-    uint256 itemId
-    ) public payable nonReentrant {
+  function createMarketSale(address nftContract,uint256 itemId  ) public payable nonReentrant {
     uint price = idToMarketItem[itemId].price;
     uint tokenId = idToMarketItem[itemId].tokenId;
     require(msg.value == price, "Please submit the asking price in order to complete the purchase");
@@ -121,7 +108,7 @@ function cancelMarketItem(uint256 tokenId) public payable nonReentrant onlyOwner
     return items;
   }
 
-  /* Returns onlyl items that a user has purchased */
+  /* Returns only items that a user has purchased */
   function fetchMyNFTs() public view returns (MarketItem[] memory) {
     uint totalItemCount = _itemIds.current();
     uint itemCount = 0;
@@ -167,11 +154,5 @@ function cancelMarketItem(uint256 tokenId) public payable nonReentrant onlyOwner
       }
     }
     return items;
-  }
-    
-  
-  function withdraw(address account) public payable onlyOwner {
-    (bool success, ) = payable(account).call{value: address(this).balance}("");
-    require(success);
   }
 }
