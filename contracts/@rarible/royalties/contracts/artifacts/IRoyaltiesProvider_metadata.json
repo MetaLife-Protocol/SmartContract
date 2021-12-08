@@ -1,0 +1,90 @@
+{
+	"compiler": {
+		"version": "0.8.3+commit.8d00100c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getRoyalties",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address payable",
+								"name": "account",
+								"type": "address"
+							},
+							{
+								"internalType": "uint96",
+								"name": "value",
+								"type": "uint96"
+							}
+						],
+						"internalType": "struct LibPart.Part[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/@rarible/royalties/contracts/IRoyaltiesProvider.sol": "IRoyaltiesProvider"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/@rarible/royalties/contracts/IRoyaltiesProvider.sol": {
+			"keccak256": "0xc2b445cc51541904e0441bc2ee4a03b3133ce88fe172826a023f9105476ebb05",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cccdab33498ebfc143a1053ac33c292c884563f92c4d939f5fd73bfb356ec5c0",
+				"dweb:/ipfs/QmTy9cZpiVGkTjYk1aNHJEvZYpMkZt1wn17fxePZUjGDRP"
+			]
+		},
+		"contracts/@rarible/royalties/contracts/LibPart.sol": {
+			"keccak256": "0xec2b90b78674357091dc40536806118af22fb29d64c5ca0a15172990a274d2b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://865a5fd92412dfb0b84bfaccaa452d36a18d0b046aca2b30e7c2c4a643ca83e1",
+				"dweb:/ipfs/QmUqxWeFeXhY1FvhhXX8UstkW7tZKnKcEhYGCzmKMA6sVQ"
+			]
+		}
+	},
+	"version": 1
+}

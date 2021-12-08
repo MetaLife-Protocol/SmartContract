@@ -1,0 +1,117 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"görli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"getRaribleV2Royalties(uint256)": "cad96cca"
+		}
+	},
+	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"components": [
+						{
+							"internalType": "address payable",
+							"name": "account",
+							"type": "address"
+						},
+						{
+							"internalType": "uint96",
+							"name": "value",
+							"type": "uint96"
+						}
+					],
+					"indexed": false,
+					"internalType": "struct LibPart.Part[]",
+					"name": "royalties",
+					"type": "tuple[]"
+				}
+			],
+			"name": "RoyaltiesSet",
+			"type": "event"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "id",
+					"type": "uint256"
+				}
+			],
+			"name": "getRaribleV2Royalties",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "address payable",
+							"name": "account",
+							"type": "address"
+						},
+						{
+							"internalType": "uint96",
+							"name": "value",
+							"type": "uint96"
+						}
+					],
+					"internalType": "struct LibPart.Part[]",
+					"name": "",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+	]
+}
