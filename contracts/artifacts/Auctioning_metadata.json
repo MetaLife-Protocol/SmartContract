@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.3+commit.8d00100c"
+		"version": "0.8.7+commit.e28d00a7"
 	},
 	"language": "Solidity",
 	"output": {
@@ -161,40 +161,40 @@
 		"compilationTarget": {
 			"contracts/BidingContract.sol": "Auctioning"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
 		"contracts/BidingContract.sol": {
-			"keccak256": "0x67b7a10236f1069e9a9d19d8a798e702fc4eb03e5af44829fb97f448bfc47510",
+			"keccak256": "0xb3f5b499e4815e66db194e4901f01d623805678677349a63c399c4cb754cb7d4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://21359ccd72d5761dbdea972fb3048114330c4915fa34eba5919e5bf42b07ba3d",
-				"dweb:/ipfs/QmQNovPvTAhFTGmUhgQR8zp1LzZox5Jm5Xa1K3Ea7cFtTJ"
+				"bzz-raw://7c3229facbb9a4fb4f1454e28affb42dbd59f5bebd37edff87d5e0353f7ab4ae",
+				"dweb:/ipfs/QmW7uHvRAQKc1rfCGoMnaCCkATv6YUdyhuZHvFBXabXjuV"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/IERC721.sol": {
-			"keccak256": "0x872ba21af7c1f0ae04a715beca31e8fcac764d6c8762940b0fe1bfb6ed8e86f4",
+			"keccak256": "0x516a22876c1fab47f49b1bc22b4614491cd05338af8bd2e7b382da090a079990",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://497017741d74878b56a67ad51e98061bd9ec0e6e4fdbfef0e2ab51523f4c16de",
-				"dweb:/ipfs/QmWfkpRHksy8jFywqYxdmMqdkQ1hxrGTPoNBXbZ48zTvyv"
+				"bzz-raw://a439187f7126d31add4557f82d8aed6be0162007cd7182c48fd934dbab8f3849",
+				"dweb:/ipfs/QmRPLguRFvrRJS7r6F1bcLvsx6q1VrgjEpZafyeL8D7xZh"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/introspection/IERC165.sol": {
-			"keccak256": "0x6aa521718bf139b44ce56f194f6aea1d590cacef995b5a84703fb1579fa49be9",
+			"keccak256": "0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://100f8d367b5e94eb9cb991914f1de133cf272654c0708faa893bbc17a5b35b93",
-				"dweb:/ipfs/QmZeBojmgXq821dL1TJKFb58B1FogM9jL3u7hXQ8hTEBKT"
+				"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f",
+				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
 			]
 		}
 	},

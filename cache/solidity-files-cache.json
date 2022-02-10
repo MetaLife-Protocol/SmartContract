@@ -1,0 +1,1157 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/user/Desktop/SmartContract/contracts/@rarible/royalties/contracts/impl/AbstractRoyalties.sol": {
+      "lastModificationDate": 1642662539724,
+      "contentHash": "034e5b56c9149236b09aa7fdcfe13f7c",
+      "sourceName": "contracts/@rarible/royalties/contracts/impl/AbstractRoyalties.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../LibPart.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AbstractRoyalties"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/@rarible/royalties/contracts/LibPart.sol": {
+      "lastModificationDate": 1642662560669,
+      "contentHash": "a67b51bc8b19568b87edebe516dc283e",
+      "sourceName": "contracts/@rarible/royalties/contracts/LibPart.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "LibPart"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/@rarible/royalties/contracts/impl/RoyaltiesV2Impl.sol": {
+      "lastModificationDate": 1642662577411,
+      "contentHash": "2eb3dfe3a7bbf56f431bc009987cf918",
+      "sourceName": "contracts/@rarible/royalties/contracts/impl/RoyaltiesV2Impl.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./AbstractRoyalties.sol",
+        "../RoyaltiesV2.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "RoyaltiesV2Impl"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/@rarible/royalties/contracts/RoyaltiesV2.sol": {
+      "lastModificationDate": 1642686629043,
+      "contentHash": "7bf24d92a5f74fd09f24e4c8ae8e58f3",
+      "sourceName": "contracts/@rarible/royalties/contracts/RoyaltiesV2.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./LibPart.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "RoyaltiesV2"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/RaribleRoyaltyERC721.sol": {
+      "lastModificationDate": 1642662583503,
+      "contentHash": "5919b46461c4c3be67dfe2c5485fd69a",
+      "sourceName": "contracts/RaribleRoyaltyERC721.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/utils/Counters.sol",
+        "./@rarible/royalties/contracts/impl/RoyaltiesV2Impl.sol",
+        "./@rarible/royalties/contracts/LibPart.sol",
+        "./@rarible/royalties/contracts/LibRoyaltiesV2.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "RoyaltyNFT"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1642622014091,
+      "contentHash": "81722bd5f5980edd45a9a72c4119225a",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC721.sol",
+        "./IERC721Receiver.sol",
+        "./extensions/IERC721Metadata.sol",
+        "../../utils/Address.sol",
+        "../../utils/Context.sol",
+        "../../utils/Strings.sol",
+        "../../utils/introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC721"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1642622011995,
+      "contentHash": "cbba874af15bc1c65a1c82aebec1a0fe",
+      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/node_modules/@openzeppelin/contracts/utils/Counters.sol": {
+      "lastModificationDate": 1642622012014,
+      "contentHash": "a21834c04c11733a9018196d6b1b0e89",
+      "sourceName": "@openzeppelin/contracts/utils/Counters.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Counters"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/@rarible/royalties/contracts/LibRoyaltiesV2.sol": {
+      "lastModificationDate": 1642686626641,
+      "contentHash": "a1399923bc2c3af6a59a84accbb93c6d",
+      "sourceName": "contracts/@rarible/royalties/contracts/LibRoyaltiesV2.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "LibRoyaltiesV2"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1642622014091,
+      "contentHash": "937105c04c9b4b689f8ee2d6d161994d",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC721"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1642622014090,
+      "contentHash": "c327b62ee5bcacfdd977bc3888fba3a4",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC721Receiver"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+      "lastModificationDate": 1642622015243,
+      "contentHash": "a17d56fe0dfcceb68cd8a527b934b0ae",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC721Metadata"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1642622012010,
+      "contentHash": "a8d6f1154bf88980c18dd20fb009967d",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1642622012010,
+      "contentHash": "a06a83834de6f8eb27f6ed608d030ac2",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1642622012015,
+      "contentHash": "babfde9e032d8044f461325c13ca07d7",
+      "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Strings"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1642622014094,
+      "contentHash": "31c485b4e552cc1bdeb99edb8303011e",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1642622014094,
+      "contentHash": "caf880149ceb95d7355b976d61c278a8",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/Market.sol": {
+      "lastModificationDate": 1642955130954,
+      "contentHash": "049a37a039f7d9fb5c06ff8be66af5d2",
+      "sourceName": "contracts/Market.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/utils/Counters.sol",
+        "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+        "./BidingContract.sol",
+        "./@rarible/royalties/contracts/impl/RoyaltiesV2Impl.sol",
+        "./@rarible/royalties/contracts/LibPart.sol",
+        "./@rarible/royalties/contracts/LibRoyaltiesV2.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "NFTMarket"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+      "lastModificationDate": 1642622011995,
+      "contentHash": "402cec08d80c01e96ba8d27963975f8d",
+      "sourceName": "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/BidingContract.sol": {
+      "lastModificationDate": 1642955100284,
+      "contentHash": "cca47eaa31248d06214c9323afbd816e",
+      "sourceName": "contracts/BidingContract.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC721/IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Auctioning"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/@rarible/royalties/contracts/IRoyaltiesProvider.sol": {
+      "lastModificationDate": 1642662535825,
+      "contentHash": "cd0bfcebd282a928705955e2ce9aa3b7",
+      "sourceName": "contracts/@rarible/royalties/contracts/IRoyaltiesProvider.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./LibPart.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IRoyaltiesProvider"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/rarible-royalties-tutorial-main/contracts/RaribleRoyaltyERC721.sol": {
+      "lastModificationDate": 1642621787880,
+      "contentHash": "f6419ff021636cd6241697b88ad46469",
+      "sourceName": "contracts/rarible-royalties-tutorial-main/contracts/RaribleRoyaltyERC721.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/utils/Counters.sol",
+        "./@rarible/royalties/contracts/impl/RoyaltiesV2Impl.sol",
+        "./@rarible/royalties/contracts/LibPart.sol",
+        "./@rarible/royalties/contracts/LibRoyaltiesV2.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "RoyaltyNFT"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/rarible-royalties-tutorial-main/contracts/@rarible/royalties/contracts/impl/RoyaltiesV2Impl.sol": {
+      "lastModificationDate": 1642621787880,
+      "contentHash": "2eb3dfe3a7bbf56f431bc009987cf918",
+      "sourceName": "contracts/rarible-royalties-tutorial-main/contracts/@rarible/royalties/contracts/impl/RoyaltiesV2Impl.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./AbstractRoyalties.sol",
+        "../RoyaltiesV2.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "RoyaltiesV2Impl"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/rarible-royalties-tutorial-main/contracts/@rarible/royalties/contracts/LibPart.sol": {
+      "lastModificationDate": 1642621787880,
+      "contentHash": "a67b51bc8b19568b87edebe516dc283e",
+      "sourceName": "contracts/rarible-royalties-tutorial-main/contracts/@rarible/royalties/contracts/LibPart.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "LibPart"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/rarible-royalties-tutorial-main/contracts/@rarible/royalties/contracts/LibRoyaltiesV2.sol": {
+      "lastModificationDate": 1642621787880,
+      "contentHash": "a1399923bc2c3af6a59a84accbb93c6d",
+      "sourceName": "contracts/rarible-royalties-tutorial-main/contracts/@rarible/royalties/contracts/LibRoyaltiesV2.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "LibRoyaltiesV2"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/rarible-royalties-tutorial-main/contracts/@rarible/royalties/contracts/impl/AbstractRoyalties.sol": {
+      "lastModificationDate": 1642621787880,
+      "contentHash": "034e5b56c9149236b09aa7fdcfe13f7c",
+      "sourceName": "contracts/rarible-royalties-tutorial-main/contracts/@rarible/royalties/contracts/impl/AbstractRoyalties.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../LibPart.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AbstractRoyalties"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/rarible-royalties-tutorial-main/contracts/@rarible/royalties/contracts/RoyaltiesV2.sol": {
+      "lastModificationDate": 1642621787880,
+      "contentHash": "7bf24d92a5f74fd09f24e4c8ae8e58f3",
+      "sourceName": "contracts/rarible-royalties-tutorial-main/contracts/@rarible/royalties/contracts/RoyaltiesV2.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./LibPart.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "RoyaltiesV2"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/rarible-royalties-tutorial-main/contracts/@rarible/royalties/contracts/IRoyaltiesProvider.sol": {
+      "lastModificationDate": 1642621787880,
+      "contentHash": "0081f3ebe19eed26e4dacd1e33ad1174",
+      "sourceName": "contracts/rarible-royalties-tutorial-main/contracts/@rarible/royalties/contracts/IRoyaltiesProvider.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./LibPart.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IRoyaltiesProvider"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/contracts/NFT.sol": {
+      "lastModificationDate": 1642954586167,
+      "contentHash": "44b3f7a02286e2e13906f7d67b4c82a5",
+      "sourceName": "contracts/NFT.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/Counters.sol",
+        "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "./RaribleRoyaltyERC721.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "NFT"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol": {
+      "lastModificationDate": 1642622015243,
+      "contentHash": "1744bec5bc5b6d27a7719cb8d4b5852f",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC721URIStorage"
+      ]
+    },
+    "/Users/user/Desktop/SmartContract/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1642622011079,
+      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    }
+  }
+}

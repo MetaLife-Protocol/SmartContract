@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.10+commit.fc410830"
+		"version": "0.8.3+commit.8d00100c"
 	},
 	"language": "Solidity",
 	"output": {
@@ -135,7 +135,7 @@
 		"compilationTarget": {
 			"contracts/RaribleRoyaltyERC721.sol": "RoyaltyNFT"
 		},
-		"evmVersion": "london",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
