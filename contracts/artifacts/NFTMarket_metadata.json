@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.12+commit.f00d7308"
 	},
 	"language": "Solidity",
 	"output": {
@@ -170,6 +170,10 @@
 				],
 				"name": "Transfer",
 				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
 			},
 			{
 				"inputs": [
@@ -842,19 +846,19 @@
 			]
 		},
 		"contracts/Market.sol": {
-			"keccak256": "0x0af8a66f090a9bd5fde7fa46e5a4ce9aefbe664f1923b79eca0e127d6813334a",
+			"keccak256": "0xe41a94164b7596906c2d6db8155ef1584e5cd5576cc22a9a180292849d9973c8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://40d80dd943edd3957c968f794e185935e81e1794849582ded9d49e1e0f8db11f",
-				"dweb:/ipfs/QmYjo1fEkRHEEEdsigJCuyqNXPFajVwkzuaovoj1VBzPLF"
+				"bzz-raw://f01f82004aed905dec8f4cc81ef043518bcf90dc3a2856ce92309bfc88d7712f",
+				"dweb:/ipfs/QmQw5HH3U4sgQCrrcs7NkpVKVV83aRNxRbThwQqjqiEX4v"
 			]
 		},
 		"contracts/NFT.sol": {
-			"keccak256": "0x61fa94ba8d4cc6129b2175c75eadd5e547f80ef879453859ee299f56c230d46d",
+			"keccak256": "0x154bd7ebbf805ee3867514a7943c4ee425adb75cb3b2d34722a6e07bf11f197e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e31e02bd2b814b103c93b13a73e921310bf018f52644307ee1976b597df32bfe",
-				"dweb:/ipfs/QmNpuaksPffV3Ks4MyQ4pkKb2QqLQddr3VP7fFNEazktqd"
+				"bzz-raw://59e7756a7f233f1da65540e2c7cd04e043984888910fe82d84ed55e638b6d47c",
+				"dweb:/ipfs/QmaTEnhdPJszBwkgnsj28q7tf6w4iM8DZdqkpGTsk3mLho"
 			]
 		},
 		"contracts/interface/IERC2981.sol": {

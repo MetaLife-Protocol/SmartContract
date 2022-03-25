@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.12+commit.f00d7308"
 	},
 	"language": "Solidity",
 	"output": {
@@ -173,15 +173,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/BidingContract.sol": {
-			"keccak256": "0xb3f5b499e4815e66db194e4901f01d623805678677349a63c399c4cb754cb7d4",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://7c3229facbb9a4fb4f1454e28affb42dbd59f5bebd37edff87d5e0353f7ab4ae",
-				"dweb:/ipfs/QmW7uHvRAQKc1rfCGoMnaCCkATv6YUdyhuZHvFBXabXjuV"
-			]
-		},
-		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/IERC721.sol": {
+		"@openzeppelin/contracts/token/ERC721/IERC721.sol": {
 			"keccak256": "0x516a22876c1fab47f49b1bc22b4614491cd05338af8bd2e7b382da090a079990",
 			"license": "MIT",
 			"urls": [
@@ -189,12 +181,20 @@
 				"dweb:/ipfs/QmRPLguRFvrRJS7r6F1bcLvsx6q1VrgjEpZafyeL8D7xZh"
 			]
 		},
-		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/introspection/IERC165.sol": {
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
 			"keccak256": "0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1",
 			"license": "MIT",
 			"urls": [
 				"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f",
 				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
+			]
+		},
+		"contracts/BidingContract.sol": {
+			"keccak256": "0x543c693ec3aedea2b2daecfba94eafe94f129580cbf101804bf4f1a8f31981ab",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://39461ad853a2a20e25941c7924250a97c44fb036b44dd788e19a776bb7a21c94",
+				"dweb:/ipfs/QmUYLbxRyT5biKtSv6BKPhR7WdwSgzauKLquqibSmBv9W7"
 			]
 		}
 	},

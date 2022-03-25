@@ -1,0 +1,70 @@
+{
+	"id": "d157a33a3c768d6e30885a39d4fdacf6",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.1",
+	"solcLongVersion": "0.8.1+commit.df193b15",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/test/NFTCollection.sol": {
+				"content": "// pragma solidity ^0.8.0;\n\n// import \"@openzeppelin/contracts/token/ERC721/ERC721.sol\";\n\n// contract NFTCollection is ERC721 {\n//     struct NFT {\n//         string name;\n//         string URI;\n//     }\n\n//     event Mint(uint256 index, address indexed mintedBy);\n\n//     NFT[] private allNFTs;\n\n//     constructor() ERC721(\"NFT Collection\", \"NFTC\") {}\n\n//     // Mint a new NFT for Sale\n//     function mintNFT(string memory _nftName, string memory _nftURI)\n//         external\n//         returns (uint256)\n//     {\n//         allNFTs.push(NFT({name: _nftName, URI: _nftURI}));\n\n//         uint256 index = allNFTs.length - 1;\n\n//         _safeMint(msg.sender, index);\n\n//         emit Mint(index, msg.sender);\n//         return index;\n//     }\n\n//     function transferNFTFrom(\n//         address from,\n//         address to,\n//         uint256 tokenId\n//     ) public virtual returns (bool) {\n//         safeTransferFrom(from, to, tokenId);\n//         return true;\n//     }\n// }\n\n\n\n// pragma solidity ^0.8.0;\n\n// // SPDX-License-Identifier: MIT\n\n// import \"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/ERC721URIStorage.sol\";\n// import \"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/ERC721Enumerable.sol\";\n// // import \"@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol\";\n// // import \"@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol\";\n// import \"../interface/IERC2981.sol\";\n// // import \"@openzeppelin/contracts/access/Ownable.sol\";\n\n// // import \"OpenZeppelin/openzeppelin-contracts/contracts/access/Ownable.sol\";\n// import \"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol\";\n\n// /**\n//  * @title Sample NFT contract\n//  * @dev Extends ERC-721 NFT contract and implements ERC-2981\n//  */\n\n// contract Token is Ownable, ERC721Enumerable, ERC721URIStorage {\n\n//     // Keep a mapping of token ids and corresponding IPFS hashes\n//     mapping(string => uint8) hashes;\n//     // Maximum amounts of mintable tokens\n//     uint256 public constant MAX_SUPPLY = 7777;\n//     // Address of the royalties recipient\n//     address private _royaltiesReceiver;\n//     // Percentage of each sale to pay as royalties 2.5 = 250 in bips\n//     uint256 public  royaltiesPercentageInBips ;\n\n//     // Events\n//     event Mint(uint256 tokenId, address recipient);\n\n// constructor(address initialRoyaltiesReceiver, uint _royaltiesPercentageInBips) ERC721(\"Sample NFT\", \"NFT\") {\n//         royaltiesPercentageInBips = _royaltiesPercentageInBips;\n//         _royaltiesReceiver = initialRoyaltiesReceiver;\n//     }\n\n//     /** Overrides ERC-721's _baseURI function */\n//     function _baseURI() internal view override returns (string memory) {\n//         return \"https://gateway.pinata.cloud/ipfs/\";\n//     }\n\n//     function _beforeTokenTransfer(address from, address to, uint256 amount)\n//     internal override(ERC721, ERC721Enumerable) {\n//         super._beforeTokenTransfer(from, to, amount);\n//     }\n\n//     function _burn(uint256 tokenId)\n//     internal override(ERC721, ERC721URIStorage) {\n//         super._burn(tokenId);\n//     }\n\n//     /// @notice Getter function for _royaltiesReceiver\n//     /// @return the address of the royalties recipient\n//     function royaltiesReceiver() external returns(address) {\n//         return _royaltiesReceiver;\n//     }\n\n//     /// @notice Changes the royalties' recipient address (in case rights are\n//     ///         transferred for instance)\n//     /// @param newRoyaltiesReceiver - address of the new royalties recipient\n//     function setRoyaltiesReceiver(address newRoyaltiesReceiver)\n//     external onlyOwner {\n//         require(newRoyaltiesReceiver != _royaltiesReceiver); // dev: Same address\n//         _royaltiesReceiver = newRoyaltiesReceiver;\n//     }\n\n//     /// @notice Returns a token's URI\n//     /// @dev See {IERC721Metadata-tokenURI}.\n//     /// @param tokenId - the id of the token whose URI to return\n//     /// @return a string containing an URI pointing to the token's ressource\n//     function tokenURI(uint256 tokenId)\n//     public view override(ERC721, ERC721URIStorage)\n//     returns (string memory) {\n//         return super.tokenURI(tokenId);\n//     }\n\n//     /// @notice Informs callers that this contract supports ERC2981\n//     function supportsInterface(bytes4 interfaceId)\n//     public view override(ERC721, ERC721Enumerable)\n//     returns (bool) {\n//         return interfaceId == type(IERC2981).interfaceId ||\n//         super.supportsInterface(interfaceId);\n//     }\n\n\n//     /// @notice Returns all the tokens owned by an address\n//     /// @param _owner - the address to query\n//     /// @return ownerTokens - an array containing the ids of all tokens\n//     ///         owned by the address\n//     function tokensOfOwner(address _owner) external view\n//     returns(uint256[] memory ownerTokens ) {\n//         uint256 tokenCount = balanceOf(_owner);\n//         uint256[] memory result = new uint256[](tokenCount);\n\n//         if (tokenCount == 0) {\n//             return new uint256[](0);\n//         } else {\n//             for (uint256 i=0; i<tokenCount; i++) {\n//                 result[i] = tokenOfOwnerByIndex(_owner, i);\n//             }\n//             return result;\n//         }\n//     }\n\n//     /// @notice Called with the sale price to determine how much royalty\n//     //          is owed and to whom.\n//     /// @param _tokenId - the NFT asset queried for royalty information\n//     /// @param _salePrice - sale price of the NFT asset specified by _tokenId\n//     /// @return receiver - address of who should be sent the royalty payment\n//     /// @return royaltyAmount - the royalty payment amount for _value sale price\n//     function royaltyInfo(uint256 _tokenId, uint256 _salePrice) external view\n//     returns (address receiver, uint256 royaltyAmount) {\n//         uint256 _royalties = (_salePrice * royaltiesPercentageInBips) / 100 ;\n//         return (_royaltiesReceiver, _royalties);\n//     }\n\n\n//     /// @notice Mints tokens\n//     /// @param recipient - the address to which the token will be transfered\n//     /// @param hash - the IPFS hash of the token's resource\n//     /// @return tokenId - the id of the token\n//     function mint(address recipient, string memory hash)\n//     external onlyOwner\n//     returns (uint256 tokenId)\n//     {\n//         require(totalSupply() <= MAX_SUPPLY, \"All tokens minted\");\n//         require(bytes(hash).length > 0); // dev: Hash can not be empty!\n//         require(hashes[hash] != 1); // dev: Can't use the same hash twice\n//         hashes[hash] = 1;\n//         uint256 newItemId = totalSupply() + 1;\n//         _safeMint(recipient, newItemId);\n//         _setTokenURI(newItemId, hash);\n//         emit Mint(newItemId, recipient);\n//         return newItemId;\n//     }\n\n// }\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"errors": [
+			{
+				"component": "general",
+				"errorCode": "3420",
+				"formattedMessage": "Warning: Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.1;\"\n--> contracts/test/NFTCollection.sol\n\n",
+				"message": "Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.1;\"",
+				"severity": "warning",
+				"sourceLocation": {
+					"end": -1,
+					"file": "contracts/test/NFTCollection.sol",
+					"start": -1
+				},
+				"type": "Warning"
+			}
+		],
+		"sources": {
+			"contracts/test/NFTCollection.sol": {
+				"ast": {
+					"absolutePath": "contracts/test/NFTCollection.sol",
+					"exportedSymbols": {},
+					"id": 1,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [],
+					"src": "6920:0:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

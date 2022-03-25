@@ -1,21 +1,24 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Counters.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/security/ReentrancyGuard.sol";
+// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
+// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Counters.sol";
+// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/security/ReentrancyGuard.sol";
 // import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
 // import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-// import "@openzeppelin/contracts/access/Ownable.sol";
-// import "@openzeppelin/contracts/utils/Counters.sol";
-// import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-import "./BidingContract.sol";
- import "./interface/IERC2981.sol";
-import "./NFT.sol";
+
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+//import "./BidingContract.sol";
+ //import "./interface/ERC165/IERC165.sol";
+//import "./NFTCollection.sol";
+
 //import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/common/ERC2981.sol";
 //import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/common/ERC2981.sol";
 
-contract NFTMarket is ERC721, ReentrancyGuard, Auctioning {
+contract NFTMarket is ERC721, ReentrancyGuard {
     using Counters for Counters.Counter;
     Counters.Counter private _itemIds;
     Counters.Counter private _itemsSold;
@@ -63,12 +66,9 @@ contract NFTMarket is ERC721, ReentrancyGuard, Auctioning {
         uint256 tokenId,
         uint256 price
     ) public payable nonReentrant {
+        require(nftContract.ownerOf(tokenId) == msg.sender,"not owner");
         require(price > 0, "Price must be at least 1 wei");
-        require(
-            msg.value >= listingPrice,
-            "Price must be equal to listing price"
-        );
-
+        require(msg.value >= listingPrice,"Price must be equal to listing price");
         _itemIds.increment();
         uint256 itemId = _itemIds.current();
         // MarketItem.nftContract = nftContract;
@@ -83,7 +83,7 @@ contract NFTMarket is ERC721, ReentrancyGuard, Auctioning {
             false
         );
 
-        IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId);
+        require(IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId));
 
         emit MarketItemCreated(
             itemId,
@@ -94,6 +94,29 @@ contract NFTMarket is ERC721, ReentrancyGuard, Auctioning {
             price,
             false
         );
+    }
+
+      function cancelMarketItem(
+        address nftContract,
+        uint256 tokenId,
+        uint256 price
+    ) public{
+        require(nftContract.ownerOf(tokenId) == msg.sender,"not owner");
+        require(idToMarketItem[itemId].sold != true, "item is sold already" );
+        _itemIds.decrement();
+        uint256 itemId = _itemIds.current();
+      delete  idToMarketItem[itemId] = MarketItem(
+            itemId,
+            nftContract,
+            tokenId,
+            payable(msg.sender),
+            payable(address(0)),
+            price,
+            false
+        );
+    }
+    function updateNftPrice(uint _price, uint itemId) public returns(uint){
+        return idToMarketItem[itemId].price = _price; 
     }
 
     function TokenContract(uint256 itemId) public view returns(address){
@@ -120,11 +143,12 @@ contract NFTMarket is ERC721, ReentrancyGuard, Auctioning {
         }
         idToMarketItem[itemId].seller.transfer(saleValue);
        // idToMarketItem[itemId].seller.call{value: saleValue}("");
+       payable(owner).transfer(listingPrice);
         IERC721(nftContract).transferFrom(address(this), msg.sender, tokenId);
         idToMarketItem[itemId].owner = payable(msg.sender);
         idToMarketItem[itemId].sold = true;
         _itemsSold.increment();
-        payable(owner).transfer(listingPrice);
+        
     }
 
     /* Returns all unsold market items */
@@ -203,7 +227,7 @@ contract NFTMarket is ERC721, ReentrancyGuard, Auctioning {
     }
 
   function _checkRoyalties(address _contract) internal returns (bool) {
-        bool success = IERC2981(_contract).supportsInterface(
+        bool success = IERC165(_contract).supportsInterface(
             _INTERFACE_ID_ERC2981
         );
         return success;
@@ -240,4 +264,7 @@ contract NFTMarket is ERC721, ReentrancyGuard, Auctioning {
         // emit RoyaltiesPaid(tokenId, royaltiesAmount);
         return netSaleValue;
     }
+
+    fallback () payable external{}
+    
 }

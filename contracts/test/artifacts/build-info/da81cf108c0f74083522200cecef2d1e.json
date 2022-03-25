@@ -1,0 +1,82 @@
+{
+	"id": "da81cf108c0f74083522200cecef2d1e",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.1",
+	"solcLongVersion": "0.8.1+commit.df193b15",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/test/NFTCollection.sol": {
+				"content": "// pragma solidity ^0.8.0;\n\n// import \"@openzeppelin/contracts/token/ERC721/ERC721.sol\";\n\n// contract NFTCollection is ERC721 {\n//     struct NFT {\n//         string name;\n//         string URI;\n//     }\n\n//     event Mint(uint256 index, address indexed mintedBy);\n\n//     NFT[] private allNFTs;\n\n//     constructor() ERC721(\"NFT Collection\", \"NFTC\") {}\n\n//     // Mint a new NFT for Sale\n//     function mintNFT(string memory _nftName, string memory _nftURI)\n//         external\n//         returns (uint256)\n//     {\n//         allNFTs.push(NFT({name: _nftName, URI: _nftURI}));\n\n//         uint256 index = allNFTs.length - 1;\n\n//         _safeMint(msg.sender, index);\n\n//         emit Mint(index, msg.sender);\n//         return index;\n//     }\n\n//     function transferNFTFrom(\n//         address from,\n//         address to,\n//         uint256 tokenId\n//     ) public virtual returns (bool) {\n//         safeTransferFrom(from, to, tokenId);\n//         return true;\n//     }\n// }\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"errors": [
+			{
+				"component": "general",
+				"errorCode": "1878",
+				"formattedMessage": "Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> contracts/test/NFTCollection.sol\n\n",
+				"message": "SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.",
+				"severity": "warning",
+				"sourceLocation": {
+					"end": -1,
+					"file": "contracts/test/NFTCollection.sol",
+					"start": -1
+				},
+				"type": "Warning"
+			},
+			{
+				"component": "general",
+				"errorCode": "3420",
+				"formattedMessage": "Warning: Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.1;\"\n--> contracts/test/NFTCollection.sol\n\n",
+				"message": "Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.1;\"",
+				"severity": "warning",
+				"sourceLocation": {
+					"end": -1,
+					"file": "contracts/test/NFTCollection.sol",
+					"start": -1
+				},
+				"type": "Warning"
+			}
+		],
+		"sources": {
+			"contracts/test/NFTCollection.sol": {
+				"ast": {
+					"absolutePath": "contracts/test/NFTCollection.sol",
+					"exportedSymbols": {},
+					"id": 1,
+					"nodeType": "SourceUnit",
+					"nodes": [],
+					"src": "982:0:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

@@ -1,13 +1,13 @@
 pragma solidity ^0.8.0;
 // SPDX-License-Identifier: MIT
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/introspection/ERC165.sol";
+// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/introspection/ERC165.sol";
 // import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/common/ERC2981.sol";
-
+//import "./ERC165/IERC165.sol";
 ///
 /// @dev Interface for the NFT Royalty Standard
 ///
-interface IERC2981 is IERC165 {
+interface IERC2981  {
     /// ERC165 bytes to add to interface array - set in parent contract
     /// implementing this standard
     ///

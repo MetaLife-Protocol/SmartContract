@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.13+commit.abaa5c0e"
 	},
 	"language": "Solidity",
 	"output": {
@@ -11,6 +11,11 @@
 						"internalType": "address",
 						"name": "initialRoyaltiesReceiver",
 						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_royaltiesPercentageInBips",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -300,7 +305,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "royaltiesPercentage",
+				"name": "royaltiesPercentageInBips",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -730,7 +735,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/NFT.sol": "Token"
+			"contracts/NFTCollection.sol": "Token"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -744,20 +749,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/NFT.sol": {
-			"keccak256": "0x61fa94ba8d4cc6129b2175c75eadd5e547f80ef879453859ee299f56c230d46d",
+		"contracts/NFTCollection.sol": {
+			"keccak256": "0x098725c5a4f8049e69398deaed14c965bea7cce0146a82a73522119bb53d2a9e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e31e02bd2b814b103c93b13a73e921310bf018f52644307ee1976b597df32bfe",
-				"dweb:/ipfs/QmNpuaksPffV3Ks4MyQ4pkKb2QqLQddr3VP7fFNEazktqd"
+				"bzz-raw://0f2a031d74aea7cd7004473c3cf1e58672d34e31c274ece55e8254ce06960cc3",
+				"dweb:/ipfs/QmaRctzBGVLn7F4oz8s6eyajEMgSjhnrxG4cJA2KZzqYbY"
 			]
 		},
 		"contracts/interface/IERC2981.sol": {
-			"keccak256": "0xdd6be60ea4e2754a2a988fc0263eaeef8192c4b40cee61a7e0c6a67907cf188a",
+			"keccak256": "0xe60d271229c7396bfd6d2a8b69cc357ff62dba0888c4f8584d5426f84480207b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://172d84e3d87990865b6cde76052fdb80dc1244d51c2d07e84a4874fd9fbfba94",
-				"dweb:/ipfs/QmT2gWFG7uZzEVHRipKhphy2oe1sX8wVgGiHgvsZHwkrCP"
+				"bzz-raw://a72b1603a1723912a2ba3e265c54fad9e49500b01585867c8602f2631335b7f3",
+				"dweb:/ipfs/QmV5C9BvF43pjmDYP1ZdA5hYRWRwHtdR8nkcCAyh8FtP3y"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {
@@ -769,11 +774,11 @@
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol": {
-			"keccak256": "0x6c051a020af35571551a3a1bd2dfc5913f7f5adaf463fcc925dbe8a50dee8071",
+			"keccak256": "0x38ecbca9e6fb443b914b65ad115d20ab1ac3b675424591c549fcba1ff1147c9a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://88a35e714ee3f7d6fe6eda24c7eb3d4195a33d8d71f49a5679a8b149ae064a52",
-				"dweb:/ipfs/QmbZ3wmQ9KivRNF6zhJe8xcHWKoHx23WG18uxHPv1mmqGx"
+				"bzz-raw://bd4bb8f45aaac22eec2165263a0bc3def8638af01e927ba677f8518af90af515",
+				"dweb:/ipfs/QmeYhUpBbLa8vskLVAP7foGqk2oQS5PoodhpsvHHzGWkm2"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/IERC721.sol": {
